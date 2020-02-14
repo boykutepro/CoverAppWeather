@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct day {
+struct Day {
     var time: String
     var icon: String
     var temp: String

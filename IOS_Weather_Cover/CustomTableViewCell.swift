@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct week {
+struct Week {
     var day: String
     var icon: String
     var highestTemp: String

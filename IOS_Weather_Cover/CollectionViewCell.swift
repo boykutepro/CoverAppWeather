@@ -13,7 +13,7 @@ class CollectionViewCell: UICollectionViewCell {
     let containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .black
+        view.backgroundColor = .clear
         
         return view
     }()
@@ -52,15 +52,17 @@ class CollectionViewCell: UICollectionViewCell {
         
         setupLayout()
     }
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setupLayout()
-    }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    //K co file xib thi dung init
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//
+//        setupLayout()
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     
     func setupLayout() {
