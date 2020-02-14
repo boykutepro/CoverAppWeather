@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Hôm nay"
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 16)
+        label.font = .systemFont(ofSize: 18)
         
         return label
     } ()
@@ -141,13 +141,19 @@ class ViewController: UIViewController {
         imageBackground.addSubview(tempLabel)
         tempLabel.topAnchor.constraint(equalTo: sttLabel.bottomAnchor, constant: 18).isActive = true
         tempLabel.centerXAnchor.constraint(equalTo: sttLabel.centerXAnchor, constant: 0).isActive = true
+        
 
         //CollectionView
         containerView.addSubview(collectionView)
-        collectionView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 380).isActive = true
+        collectionView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 400).isActive = true
         collectionView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 0).isActive = true
         collectionView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: 0).isActive = true
         collectionView.heightAnchor.constraint(equalToConstant: 140).isActive = true
+        
+        //DayLabel
+        containerView.addSubview(dayLabel)
+        dayLabel.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: -10).isActive = true
+        dayLabel.leftAnchor.constraint(equalTo: collectionView.leftAnchor, constant: 14).isActive = true
         
         //TableView
         containerView.addSubview(tableView)
@@ -160,22 +166,22 @@ class ViewController: UIViewController {
 
     }
     func setupData() {
-        let time1 = Day(time: "NOW", icon: "icon_cloudy", temp: "21")
-        let time2 = Day(time: "21", icon: "icon_rain", temp: "25")
-        let time3 = Day(time: "22", icon: "icon_cloudy", temp: "26")
-        let time4 = Day(time: "23", icon: "icons_sun", temp: "28")
-        let time5 = Day(time: "24", icon: "icon_rain", temp: "19")
-        let time6 = Day(time: "00", icon: "icon_rain", temp: "15")
-        let time7 = Day(time: "01", icon: "icon_cloudy", temp: "14")
+        let time1 = Day(time: "NOW", icon: "icon_cloudy", temp: "18°")
+        let time2 = Day(time: "21", icon: "icon_rain", temp: "25°")
+        let time3 = Day(time: "22", icon: "icon_cloudy", temp: "26°")
+        let time4 = Day(time: "23", icon: "icons_sun", temp: "28°")
+        let time5 = Day(time: "24", icon: "icon_rain", temp: "19°")
+        let time6 = Day(time: "00", icon: "icon_rain", temp: "15°")
+        let time7 = Day(time: "01", icon: "icon_cloudy", temp: "14°")
         times = [time1, time2, time3, time4, time5, time6, time7, time1, time2, time3, time4]
         
-        let day1 = Week(day: "Thứ Bảy", icon: "icons_sun", highestTemp: "28", lowestTemp: "13")
-        let day2 = Week(day: "Chủ Nhật", icon: "icon_rain", highestTemp: "28", lowestTemp: "13")
-        let day3 = Week(day: "Thứ Hai", icon: "icon_cloudy", highestTemp: "28", lowestTemp: "13")
-        let day4 = Week(day: "Thứ Ba", icon: "icons_sun", highestTemp: "28", lowestTemp: "13")
-        let day5 = Week(day: "Thứ Tư", icon: "icon_rain", highestTemp: "28", lowestTemp: "13")
-        let day6 = Week(day: "Thứ Năm", icon: "icon_rain", highestTemp: "28", lowestTemp: "13")
-        let day7 = Week(day: "Thứ Sáu", icon: "icon_cloudy", highestTemp: "28", lowestTemp: "13")
+        let day1 = Week(day: "Thứ Bảy", icon: "icons_sun", highestTemp: "26°", lowestTemp: "13°")
+        let day2 = Week(day: "Chủ Nhật", icon: "icon_rain", highestTemp: "28°", lowestTemp: "15°")
+        let day3 = Week(day: "Thứ Hai", icon: "icon_cloudy", highestTemp: "24°", lowestTemp: "17°")
+        let day4 = Week(day: "Thứ Ba", icon: "icons_sun", highestTemp: "21°", lowestTemp: "11°")
+        let day5 = Week(day: "Thứ Tư", icon: "icon_rain", highestTemp: "23°", lowestTemp: "17°")
+        let day6 = Week(day: "Thứ Năm", icon: "icon_rain", highestTemp: "25°", lowestTemp: "18°")
+        let day7 = Week(day: "Thứ Sáu", icon: "icon_cloudy", highestTemp: "28°", lowestTemp: "13°")
         days = [day1, day2, day3, day4, day5, day6, day7, day1, day2, day3, day4, day5, day6, day7]
         
         
